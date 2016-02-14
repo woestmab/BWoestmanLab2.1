@@ -3,7 +3,7 @@ package com.woestmanBrian.bWoestmanLab2_1.fragments;
 /**
  * Created by Brian Woestman on 2/6/16.
  * Android Programming
- * MoWe 2:30p - 4:20p
+ * We 5:30p - 9:20p
  */
 public class Ipsum {
 

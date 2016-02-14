@@ -15,9 +15,42 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<EditText xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/article"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:textSize="18sp" /><!-- From: file:/Users/Bdub/Dropbox/School/2016Spring/AdvAndroid/Labs/2.1/BWoestmanLab2.1/app/src/main/res/layout/article_view.xml -->
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:background="#c4d0fb">
+
+    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/article"
+        android:layout_width="match_parent"
+        android:layout_height="457dp"
+        android:padding="16dp"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_cancel"
+            android:text="@string/str_cancel"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/str_save"
+            android:id="@+id/btn_save" />
+
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/Users/Bdub/Dropbox/School/2016Spring/AdvAndroid/Labs/2.1/BWoestmanLab2.1/app/src/main/res/layout/article_view.xml -->

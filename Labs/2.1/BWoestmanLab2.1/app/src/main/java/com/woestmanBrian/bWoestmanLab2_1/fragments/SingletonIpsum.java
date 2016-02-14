@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Brian Woestman on 2/6/16.
  * Android Programming
- * MoWe 2:30p - 4:20p
+ * We 5:30p - 9:20p
  */
 public class SingletonIpsum {
 
@@ -19,7 +19,7 @@ public class SingletonIpsum {
     };
 
     private static String[] Articles = {
-            "Article One\n\nExcepteur pour-over occaecat squid biodiesel umami" +
+            "Excepteur pour-over occaecat squid biodiesel umami" +
                     " gastropub, nulla laborum salvia dreamcatcher fanny pack. Ullamco " +
                     "culpa retro ea, trust fund excepteur eiusmod direct trade banksy " +
                     "nisi lo-fi cray messenger bag. Nesciunt esse carles selvage put a " +
@@ -30,7 +30,7 @@ public class SingletonIpsum {
                     "tempor. Velit synth dreamcatcher, magna shoreditch in american apparel " +
                     "messenger bag narwhal PBR ennui farm-to-table.",
 
-            "Article Two\n\nVinyl williamsburg non velit, master cleanse four loko banh mi. " +
+            "Vinyl williamsburg non velit, master cleanse four loko banh mi. " +
                     "Enim kogi keytar trust fund pop-up portland gentrify. Non ea typewriter " +
                     "dolore deserunt Austin. Ad magna ethical kogi mixtape next level. Aliqua " +
                     "pork belly thundercats, ut pop-up tattooed dreamcatcher kogi accusamus photo " +

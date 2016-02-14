@@ -15,18 +15,25 @@
  */
 package com.woestmanBrian.bWoestmanLab2_1.fragments;
 
+import android.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
 
-public class ArticleFragment extends Fragment {
+public class ArticleFragment extends Fragment implements StringConstants {
     final static String ARG_POSITION = "position";
     int mCurrentPosition = -1;
+
+    private EditText    mEtArticle;
+    private Button      mBtnCancel;
+    private Button      mBtnSave;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
@@ -41,6 +48,42 @@ public class ArticleFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.article_view, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle bundle) {
+
+        mEtArticle  = (EditText)    view.findViewById(R.id.article);
+        mBtnCancel  = (Button)      view.findViewById(R.id.btn_cancel);
+        mBtnSave    = (Button)      view.findViewById(R.id.btn_save);
+
+        mBtnCancel.setOnClickListener(new View.OnClickListener(){
+
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                returnToHeadlines();
+            }
+        });
+
+        mBtnSave.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v)
+            {
+                saveIpsum();
+                returnToHeadlines();
+            }
+        });
+
     }
 
     @Override
@@ -82,5 +125,25 @@ public class ArticleFragment extends Fragment {
 
         // Save the current article selection in case we need to recreate the fragment
         outState.putInt(ARG_POSITION, mCurrentPosition);
+    }
+
+    public void saveIpsum() {
+        String content = mEtArticle.getText().toString();
+        SingletonIpsum singleton = SingletonIpsum.getSingletonIpsum();
+        ArrayList<Ipsum> ipsums = (ArrayList) singleton.getIpsums();
+
+        ipsums.get(mCurrentPosition).setContent(content);
+    }
+
+    public void returnToHeadlines() {
+
+        HeadlinesFragment headlinesFragment = new HeadlinesFragment();
+
+        android.support.v4.app.FragmentTransaction transaction =
+                getFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.fragment_container, headlinesFragment)
+                .addToBackStack(null)
+                .commit();
     }
 }

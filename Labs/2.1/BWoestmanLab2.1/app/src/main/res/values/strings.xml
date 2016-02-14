@@ -17,4 +17,6 @@ limitations under the License.
 
 <resources>
     <string name="app_name">bWoestmanLab2_1</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_save">Save</string>
 </resources>
